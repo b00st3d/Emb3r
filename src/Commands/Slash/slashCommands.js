@@ -117,6 +117,15 @@ Your question: ${question}`,
                 })
             }
         break;
+//runHelp
+        case "run_help":
+            try {
+                await cmd.runHelp(interaction);
+            } catch (error) {
+                cmd.logger(guild, "Error", `Run help failed to send: ${error}`);
+                console.error(`${timestamp()} - server: ${guild.name} - Run help failed: ${error}`);
+            }
+        break;
 //////////////ADMIN COMMANDS//////////////
 //Parrot
         case "parrot": 

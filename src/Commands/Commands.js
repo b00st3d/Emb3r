@@ -6,6 +6,7 @@ module.exports.rules = require('./User/rules.js').rulesEmbed; //message, cmd2, g
 module.exports.userStats = require('./User/stat.js').userStats; //message, cmd2, guild
 module.exports.serverStats = require('./User/stat.js').serverStats; //guild
 module.exports.help = require('./User/help.js').helpEmbed; 
+module.exports.runHelp = require('./User/runHelp.js').runHelp;
 
 module.exports.delete = require('./Admin/delete.js').del; //interaction, channel, number
 module.exports.logger = require('./Admin/logger.js').logger; //guild, title, message

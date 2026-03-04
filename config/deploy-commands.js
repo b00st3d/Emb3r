@@ -72,6 +72,11 @@ const commands = [
                 )
         ),
 
+//runHelp
+new SlashCommandBuilder()
+    .setName('run_help')
+    .setDescription('Show how to run code with the execution bot'),
+
 //stats        
     new SlashCommandBuilder().setName('stats') //STATS
         .setDescription('Display server or user stats')

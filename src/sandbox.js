@@ -1,4 +1,17 @@
-const { EmbedBuilder } = require("discord.js");
+const {
+  EmbedBuilder,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+} = require("discord.js");
+
+const githubRow = new ActionRowBuilder().addComponents(
+  new ButtonBuilder()
+    .setLabel("Star on GitHub")
+    .setStyle(ButtonStyle.Link)
+    .setURL("https://github.com/Ryuga/Hermes/")
+    .setEmoji("⭐"),
+);
 
 const EXECUTE_URL = process.env.EXECUTE_URL;
 
@@ -129,11 +142,11 @@ async function sendResult(channel, result, language, opts = {}) {
   }
 
   if (targetMessage) {
-    await targetMessage.edit({ embeds: [embed] });
+    await targetMessage.edit({ embeds: [embed], components: [githubRow] });
     return targetMessage;
   }
 
-  return await channel.send({ embeds: [embed] });
+  return await channel.send({ embeds: [embed], components: [githubRow] });
 }
 
 module.exports = {
